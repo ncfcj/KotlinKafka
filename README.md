@@ -16,6 +16,7 @@
 - NoSql database with MongoDb
 
 ## Future improvements 🤔
+- Host the project online
 - Unit Tests for both projects using JUnit
 - CI/CD using Github Actions
 
