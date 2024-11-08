@@ -5,7 +5,7 @@
 
 - Run the docker-compose.yml in the root folder through the docker-compose up --build command
 - Then you can make http requests on localhost:8080.
-- You can find the endpoints documentation on ReadMe.io [here](https://kotlinmicroservices.readme.io/reference).
+- You can find the endpoints documentation on ReadMe.io [here](https://kotlinmicroservices.readme.io/reference/person)
 
 ## Concepts used in Project 💡
 
