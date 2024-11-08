@@ -16,6 +16,7 @@
 - NoSql database with MongoDb
 
 ## Future improvements 🤔
+- Make the code fully async using Kotlin-coroutines
 - Host the project online
 - Unit Tests for both projects using JUnit
 - CI/CD using Github Actions
