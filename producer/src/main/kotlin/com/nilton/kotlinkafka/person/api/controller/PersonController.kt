@@ -2,6 +2,7 @@ package com.nilton.kotlinkafka.person.api.controller
 
 import com.nilton.kotlinkafka.person.models.Person
 import com.nilton.kotlinkafka.person.models.dto.CreatePersonDto
+import com.nilton.kotlinkafka.person.models.dto.PersonDto
 import com.nilton.kotlinkafka.person.producers.PersonProducer
 import com.nilton.kotlinkafka.person.services.PersonService
 import org.slf4j.LoggerFactory
@@ -69,7 +70,10 @@ class PersonController(
         val person = personService
             .findByPersonId(personId)
 
-        return if (person != null) ResponseEntity.ok().body(person)
+        return if (person != null) {
+            val dto = PersonDto(person.name, person.document, person.personId)
+            ResponseEntity.ok().body(dto)
+        }
         else ResponseEntity.notFound().build()
     }
 
@@ -78,6 +82,11 @@ class PersonController(
         val personList = personService
             .listPersons()
 
-        return ResponseEntity.ok().body(personList)
+        if (personList.isNotEmpty()) {
+            val personDtoList = personList.map { PersonDto(it.name, it.document) }
+            return ResponseEntity.ok().body(personDtoList)
+        }
+
+        return ResponseEntity.notFound().build()
     }
 }
