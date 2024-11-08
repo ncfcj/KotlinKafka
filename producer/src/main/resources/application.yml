@@ -1,0 +1,23 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+
+  application:
+    name: producer
+
+  kafka:
+    bootstrap-servers: kafka:9092
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: com.nilton.kotlinkafka.person.producers.config.PersonSerializer
+
+    topics:
+      create-person: "create-person-topic"
+      update-person: "update-person-topic"
+      delete-person: "delete-person-topic"
+
+logging:
+  level:
+    root: info

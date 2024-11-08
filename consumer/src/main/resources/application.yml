@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: consumer
+
+  kafka:
+    bootstrap-servers: kafka:9092
+
+    consumer:
+      group-id: "personGroupId"
+      value-deserializer: com.nilton.kotlinkafka.consumer.consumers.config.PersonDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+
+    topics:
+      create-person: "create-person-topic"
+      update-person: "update-person-topic"
+      delete-person: "delete-person-topic"
+
+logging:
+  level:
+    root: info
