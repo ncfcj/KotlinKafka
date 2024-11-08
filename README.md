@@ -1,5 +1,6 @@
 # Kotlin Microservices
 - This is a microservices project done using Kotlin, SpringBoot, Kafka and MongoDb
+- Using JDK 17
 
 ## How to use 👣
 
