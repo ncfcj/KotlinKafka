@@ -1,11 +1,12 @@
 # Kotlin Microservices
 - This is a microservices project done using Kotlin, SpringBoot, Kafka and MongoDb
+- Using JDK 17
 
 ## How to use 👣
 
 - Run the docker-compose.yml in the root folder through the docker-compose up --build command
 - Then you can make http requests on localhost:8080.
-- You can find the endpoints documentation on ReadMe.io [here](https://kotlinmicroservices.readme.io/reference).
+- You can find the endpoints documentation on ReadMe.io [here](https://kotlinmicroservices.readme.io/reference/person)
 
 ## Concepts used in Project 💡
 
@@ -15,6 +16,8 @@
 - NoSql database with MongoDb
 
 ## Future improvements 🤔
+- Make the code fully async using Kotlin-coroutines
+- Host the project online
 - Unit Tests for both projects using JUnit
 - CI/CD using Github Actions
 
