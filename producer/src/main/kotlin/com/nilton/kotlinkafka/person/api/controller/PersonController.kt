@@ -3,6 +3,7 @@ package com.nilton.kotlinkafka.person.api.controller
 import com.nilton.kotlinkafka.person.models.Person
 import com.nilton.kotlinkafka.person.models.dto.CreatePersonDto
 import com.nilton.kotlinkafka.person.models.dto.PersonDto
+import com.nilton.kotlinkafka.person.models.dto.UpdatePersonDto
 import com.nilton.kotlinkafka.person.producers.PersonProducer
 import com.nilton.kotlinkafka.person.services.PersonService
 import org.slf4j.LoggerFactory
@@ -39,9 +40,15 @@ class PersonController(
     }
 
     @PutMapping("")
-    fun put(@RequestBody person : Person): ResponseEntity<Any>
+    fun put(@RequestBody personDto : UpdatePersonDto): ResponseEntity<Any>
     {
         return try {
+            val person = Person(
+                personId = personDto.personId,
+                name = personDto.name,
+                document = personDto.document
+            )
+
             personProducer.sendUpdatePersonMessage(person)
             ResponseEntity.ok().build()
         }

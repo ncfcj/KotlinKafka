@@ -8,7 +8,4 @@ data class CreatePersonDto (
 
         @BsonProperty("document")
         var document: String? = null,
-
-        @BsonProperty("person_id")
-        val personId: String? = null,
 )
